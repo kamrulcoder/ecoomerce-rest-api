@@ -696,3 +696,32 @@ module.exports = router;
 
 > ##   Strip Payment getway 
 > > #####  আমাদের কে Strip  Payment ম্যানেজ করার জন্য  মডেল এবং রাউটার তৈরী করতে হবে 
+
+<details>
+<summary>Strip payment   route   Code   ...... </summary>
+
+```javascript 
+const router = require("express").Router();
+const stripe = require("stripe")(process.env.STRIPE_KEY);
+
+router.post("/payment", (req, res) => {
+    stripe.charges.create(
+        {
+            source: req.body.tokenId,
+            amount: req.body.amount,
+            currency: "usd",
+        },
+        (stripeErr, stripeRes) => {
+            if (stripeErr) {
+                res.status(500).json(stripeErr);
+            } else {
+                res.status(200).json(stripeRes);
+            }
+        }
+    );
+});
+
+module.exports = router;
+```
+
+</details>
