@@ -538,7 +538,9 @@ module.exports = router;
 
   ```
 </details>
+
 <br/>
+
 > ##   Order  Manage
 > > #####  আমাদের কে Order ম্যানেজ করার জন্য  মডেল এবং রাউটার তৈরী করতে হবে 
 
@@ -691,5 +693,6 @@ module.exports = router;
 </details>
 
 <br/>
+
 > ##   Strip Payment getway 
 > > #####  আমাদের কে Strip  Payment ম্যানেজ করার জন্য  মডেল এবং রাউটার তৈরী করতে হবে 
